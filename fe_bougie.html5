@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+	<head>
+  	<meta charset="<?= $this->charset ?>">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  	
+    <title><?= $this->title ?></title>
+    <base href="<?= $this->base ?>">
+
+    <meta name="robots" content="<?= $this->robots ?>">
+    <meta name="description" content="<?= $this->description ?>">
+    <meta name="keywords" content="<?= $this->keywords ?>">
+		
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="files/layout/fonts/MyFontsWebfontsKit.css">
+		<link rel="stylesheet" href="files/layout/css/jquery.fancybox.css">
+		
+    <?= $this->viewport ?>
+    <?= $this->framework ?>
+    <?= $this->stylesheets ?>
+    <?= $this->mooScripts ?>
+    <?= $this->head ?>
+    		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="files/layout/js/jquery.bxslider.min.js"></script>
+		<script src="files/layout/js/materialize.min.js"></script>
+		<script src="files/layout/js/jquery.fancybox.pack.js"></script>
+		<script src="files/layout/js/queryloader2.min.js"></script>
+		<script src="files/layout/js/init.js"></script>
+		
+		<!--[if lt IE 9]><script src="<?= TL_ASSETS_URL ?>assets/html5shiv/<?= $GLOBALS['TL_ASSETS']['HTML5SHIV'] ?>/html5shiv-printshiv.min.js"></script><![endif]-->
+	</head>
+	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
+		<header class="page-header row" id="page-header">
+			<div class="container">
+				<div class="logo col l6 m6 s10">
+					<a href="<?= $this->base ?>"><img class="responsive-img" src="files/layout/images/logo.png" alt="Bougie Immobilien GmbH"></a>
+				</div>
+				
+				<?= $this->sections['navigation'] ?>
+				
+				<div class="clear"></div>
+			</div>
+		</header>
+		
+		<?php if(strlen($this->sections['parallax']) > 0): ?>
+			<div class="parallax-image row">
+				<?= $this->sections['parallax'] ?>
+				
+				<div class="clear"></div>				
+			</div>
+		<?php endif; ?>
+		
+		<section class="page-content row" id="page-content">
+			<div class="main-content col l12 m12 s12" id="main-content">
+				<?= $this->main ?>
+			</div>
+			
+			<?php if($this->sections['image-slider']): ?>
+				<?= $this->sections['image-slider'] ?>
+			<?php endif; ?>
+		</section>
+		
+		<footer class="page-footer row" id="page-footer">
+			<div class="top-footer col l12 m12 s12" id="top-footer">
+				<div class="container">
+					<?= $this->sections['top-footer'] ?>
+					
+					<div class="contact-form col l4 m12 s12" id="contact-form">
+						<?= $this->sections['contact-form'] ?>
+					</div>
+				</div>
+			</div>
+			
+			<div class="bottom-footer col l12 m12 s12">
+				<div class="container">
+					<span class="copyright col l4 m12 s12">&copy; Copyright <?php echo date('Y'); ?> Bougie Immobilien GmbH</span>
+					<?= $this->footer; ?>
+				</div>
+			</div>
+		</footer>
+		
+		<script>
+			$(document).ready(function() {
+				Bougie.Base.init();
+				Bougie.Preload.init();
+			});
+		
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-61941587-1', 'auto');
+          ga('set', 'anonymizeIp', true);
+          ga('send', 'pageview');
+        
+        </script>
+	</body>
+</html>

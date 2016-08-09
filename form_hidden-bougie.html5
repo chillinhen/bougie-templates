@@ -1,0 +1,7 @@
+<?php
+    // Nacheinander
+    $url = (empty($_SERVER['HTTPS'])) ? 'http://' : 'https://';
+    $url .= $_SERVER['HTTP_HOST'];
+    $url .= $_SERVER['REQUEST_URI'];
+?>
+<input type="hidden" name="<?php echo $this->name; ?>" value="<?php echo $url; ?>">

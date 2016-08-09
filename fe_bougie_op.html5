@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+    <head>
+        <meta charset="<?= $this->charset ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+        <title><?= $this->title ?></title>
+        <base href="<?= $this->base ?>">
+
+        <meta name="robots" content="<?= $this->robots ?>">
+        <meta name="description" content="<?= $this->description ?>">
+        <meta name="keywords" content="<?= $this->keywords ?>">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!--		<link rel="stylesheet" href="files/layout/fonts/MyFontsWebfontsKit.css">-->
+        <link rel="stylesheet" href="files/layout/css/jquery.fancybox.css">
+
+    <?= $this->viewport ?>
+    <?= $this->framework ?>
+    <?= $this->stylesheets ?>
+    <?= $this->mooScripts ?>
+    <?= $this->head ?>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="files/layout/js/jquery.bxslider.min.js"></script>
+        <script src="files/layout/js/materialize.min.js"></script>
+        <script src="files/layout/js/jquery.fancybox.pack.js"></script>
+<!--        <script src="files/layout/js/queryloader2.min.js"></script>-->
+        <script src="files/layout/js/init.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script src="files/layout/js/fonts.js"></script>
+<!--[if lt IE 9]><script src="<?= TL_ASSETS_URL ?>assets/html5shiv/<?= $GLOBALS['TL_ASSETS']['HTML5SHIV'] ?>/html5shiv-printshiv.min.js"></script><![endif]-->
+    </head>
+    <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
+        <header class="page-header row" id="page-header">
+            <div class="container">
+                <?= $this->sections['navigation'] ?>
+                <div class="logo">
+                    <a href="<?= $this->base ?>"><img class="responsive-img" src="files/layout/images/logo.png" alt="Bougie Immobilien GmbH"></a>
+                </div>
+            </div>
+        </header>
+
+        <script src="files/layout/js/custom.js"></script>
+        <script>
+$(document).ready(function () {
+Bougie.Base.init();
+Bougie.Preload.init();
+});
+
+(function (i, s, o, g, r, a, m) {
+i['GoogleAnalyticsObject'] = r;
+i[r] = i[r] || function () {
+(i[r].q = i[r].q || []).push(arguments)
+}, i[r].l = 1 * new Date();
+a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+a.async = 1;
+a.src = g;
+m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-61941587-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
