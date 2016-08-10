@@ -12,6 +12,7 @@
         <meta name="keywords" content="<?= $this->keywords ?>">
 
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
         <!--		<link rel="stylesheet" href="files/layout/fonts/MyFontsWebfontsKit.css">-->
         <link rel="stylesheet" href="files/layout/css/jquery.fancybox.css">
 
@@ -27,8 +28,9 @@
         <script src="files/layout/js/jquery.fancybox.pack.js"></script>
 <!--        <script src="files/layout/js/queryloader2.min.js"></script>-->
         <script src="files/layout/js/init.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-        <script src="files/layout/js/fonts.js"></script>
+        <!-- ToDo Delete Font Preloader -> Conflict with Bougie preloader? -->
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script src="files/layout/js/fonts.js"></script>-->
 <!--[if lt IE 9]><script src="<?= TL_ASSETS_URL ?>assets/html5shiv/<?= $GLOBALS['TL_ASSETS']['HTML5SHIV'] ?>/html5shiv-printshiv.min.js"></script><![endif]-->
     </head>
     <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
@@ -40,6 +42,22 @@
                 </div>
             </div>
         </header>
+        	<?php if(strlen($this->sections['parallax']) > 0): ?>
+			<div class="parallax-image row">
+				<?= $this->sections['parallax'] ?>
+				
+				<div class="clear"></div>				
+			</div>
+		<?php endif; ?>
+        <section class="page-content row" id="page-content">
+            <div class="main-content" id="main-content">
+				<?= $this->main ?>
+            </div>
+
+			<?php if($this->sections['image-slider']): ?>
+				<?= $this->sections['image-slider'] ?>
+			<?php endif; ?>
+        </section>
 
         <script src="files/layout/js/custom.js"></script>
         <script>

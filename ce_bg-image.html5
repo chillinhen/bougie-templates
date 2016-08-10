@@ -1,0 +1,22 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?>> 
+
+<?php $this->block('content'); ?> 
+
+  <?php if ($this->addImage): ?> 
+  <style>#<?= str_replace([' id=','"'], '', $this->cssID) ?> { 
+       background-image: url('<?= $this->src ?>'); 
+       background-repeat: no-repeat; 
+       background-size: contain; 
+       height:0; 
+       padding-bottom: <?= round(($this->height*100) / $this->width, 1) ?>%; 
+  }</style> 
+  <?php endif; ?> 
+   
+  <div class="textPanel" <?php if (is_string($this->margin)){ ?> style="<?= $this->margin ?>"<?php } ?>> 
+    <?php if ($this->headline): ?> 
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>> 
+  <?php endif; ?> 
+  <?= $this->text ?> 
+  </div> 
+   
+<?php $this->endblock();
