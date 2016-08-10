@@ -42,40 +42,35 @@
                 </div>
             </div>
         </header>
-        	<?php if(strlen($this->sections['parallax']) > 0): ?>
-			<div class="parallax-image row">
-				<?= $this->sections['parallax'] ?>
-				
-				<div class="clear"></div>				
-			</div>
-		<?php endif; ?>
+		
         <section class="page-content row" id="page-content">
-            <div class="main-content" id="main-content">
-				<?= $this->main ?>
-            </div>
-
-			<?php if($this->sections['image-slider']): ?>
-				<?= $this->sections['image-slider'] ?>
-			<?php endif; ?>
+           <?= $this->main ?>
+                <?php if($this->sections['image-slider']): ?>
+                    <?= $this->sections['image-slider'] ?>
+                        <?php endif; ?>
         </section>
-
+        <?php if(strlen($this->sections['parallax']) > 0): ?>
+        <section class="parallax-image row">
+            <?= $this->sections['parallax'] ?>
+        </section>
+        <?php endif; ?>
         <script src="files/layout/js/custom.js"></script>
         <script>
 $(document).ready(function () {
-Bougie.Base.init();
-Bougie.Preload.init();
+    Bougie.Base.init();
+    Bougie.Preload.init();
 });
 
 (function (i, s, o, g, r, a, m) {
-i['GoogleAnalyticsObject'] = r;
-i[r] = i[r] || function () {
-(i[r].q = i[r].q || []).push(arguments)
-}, i[r].l = 1 * new Date();
-a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0];
-a.async = 1;
-a.src = g;
-m.parentNode.insertBefore(a, m)
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 ga('create', 'UA-61941587-1', 'auto');
