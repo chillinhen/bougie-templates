@@ -1,21 +1,18 @@
-<div class="<?= $this->class ?> block bg-image"<?= $this->cssID ?>> 
 
-<?php $this->block('content'); ?> 
+<div class="panel col-4 news-<?= $this->archive->id ?> block<?= $this->class ?>"> 
+    <?php if($this->addImage === true && $this->singleSRC != null): ?>
+    <figure class="image_container<?php if($this->floatClass): ?> <?= $this->floatClass; ?><?php endif; ?>">
+        <img class="responsive-img" src="<?= $this->picture['img']['src'] ?>" alt="<?= $this->Headline ?>">
+    </figure>
+   <?php else : ?><h2><?= $this->linkHeadline ?></h2>
+			<?php endif; ?>
 
-  <?php if ($this->addImage): ?> 
-  <style>#<?= str_replace([' id=','"'], '', $this->cssID) ?> { 
-       background-image: url('<?= $this->src ?>'); 
-       background-repeat: no-repeat; 
-       background-size: cover; 
-  }</style> 
-  <?php endif; ?> 
-   
-  <div class="textPanel" <?php if ($this->margin): ?> style="<?= $this->margin ?>"<?php endif; ?>> 
-    <?php if ($this->headline): ?> 
-    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>> 
-  <?php endif; ?> 
-  <?= $this->text ?> 
-  </div> 
+<?php if ($this->teaser): ?> 
+  <p class="teaser"><?php echo $this->teaser; ?></p> 
+<?php else: ?> 
+  <p class="teaser"><?php echo substr(strip_tags($this->text), 0, strpos(strip_tags($this->text), " ", 275)); ?>... <?php if ($this->text): ?> 
+<p class="more"><?php echo $this->more; ?></p> 
+<?php endif; ?></p> 
+<?php endif; ?>  
+
 </div>
-   
-<?php $this->endblock();

@@ -1,0 +1,15 @@
+
+<div class="<?= $this->class ?> ce_text block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+  <?php if ($this->addImage): ?>
+    <figure class="image_container<?= $this->floatClass ?>"<?php if ($this->margin): ?> style="<?= $this->margin ?>"<?php endif; ?>>
+    </figure>
+    <?php endif; ?>
+  <?php if ($this->headline): ?>
+    <h3><?= $this->headline ?></h3>
+  <?php endif; ?>
+
+  <?= $this->text ?>
+
+  <a href="<?= $this->href ?>" title="<?= $this->readMore ?>" class="more"><?= $this->more ?><span class="invisible"> <?= $this->headline ?></span></a>
+
+</div>
