@@ -15,11 +15,11 @@
         <!--        		<link rel="stylesheet" href="files/layout/fonts/MyFontsWebfontsKit.css">-->
         <link rel="stylesheet" href="files/layout/css/jquery.fancybox.css">
 
-    <?= $this->viewport ?>
-    <?= $this->framework ?>
-    <?= $this->stylesheets ?>
-    <?= $this->mooScripts ?>
-    <?= $this->head ?>
+<?php echo $this->robots; ?>
+<?php echo $this->framework; ?>
+<?php echo $this->stylesheets; ?>
+<?php echo $this->mooScripts; ?>
+<?php echo $this->head; ?>
 
 
         <script src="files/layout/js/jquery.bxslider.min.js"></script>
@@ -80,12 +80,9 @@
                 </div>
             </div>
         </footer>
+        <?php echo $this->mootools; ?>
         <script src="files/layout2016/js/custom.js"></script>
         <script>
-$(document).ready(function () {
-    Bougie.Base.init();
-    Bougie.Preload.init();
-});
 
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
