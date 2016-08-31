@@ -1,4 +1,4 @@
-<div class="<?= $this->class ?> block bg-image"<?= $this->cssID ?> style="background-image: url('<?= $this->src ?>'); background-repeat: no-repeat;background-size: cover;background-position:center center;"> 
+<div class="<?= $this->class ?> block bg-image"<?= $this->cssID ?> style="background-image: url('<?= $this->src ?>'); background-repeat: no-repeat;background-size: cover;background-position:bottom center;"> 
 
 <?php $this->block('content'); ?>
 

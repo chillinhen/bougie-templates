@@ -1,4 +1,3 @@
-
 <div class="panel col-4 news-<?= $this->archive->id ?> block<?= $this->class ?>"> 
     <div class="contentPanel">
     <?php if($this->addImage === true && $this->singleSRC != null): ?>

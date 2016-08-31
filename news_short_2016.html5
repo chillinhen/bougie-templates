@@ -1,23 +1,21 @@
 
 <div class="layout_short arc_<?= $this->archive->id ?> block<?= $this->class ?>">
+        <?php if($this->addImage === true && $this->singleSRC != null): ?>
+        <figure class="image_container<?php if($this->floatClass): ?> <?= $this->floatClass; ?><?php endif; ?>">
+            <img class="responsive-img" src="<?= $this->picture['img']['src'] ?>" alt="<?= $this->Headline ?>">
+        </figure>
+			<?php endif; ?> 
     <div class="contentPanel">
         <?php if ($this->hasMetaFields): ?>
     <p class="info"><?= $this->date ?> <?= $this->author ?> <?= $this->commentCount ?></p>
   <?php endif; ?>
-    <?php if($this->addImage === true && $this->singleSRC != null): ?>
-        <figure class="image_container<?php if($this->floatClass): ?> <?= $this->floatClass; ?><?php endif; ?>">
-            <img class="responsive-img" src="<?= $this->picture['img']['src'] ?>" alt="<?= $this->Headline ?>">
-        </figure>
-   <?php else : ?><h2><?= $this->linkHeadline ?></h2>
-			<?php endif; ?> 
+        <h3><?= $this->linkHeadline ?></h3>
 
-    	  <?php if ($this->text): ?>
-		    <?= $this->text; ?>
-		  <?php else: ?>
         <div class="ce_text block">
+            
     <?= $this->teaser; ?>
             <p class="more"><?php echo $this->more; ?></p> 
         </div>
-<?php endif; ?> 
+
     </div>
 </div>
