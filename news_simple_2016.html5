@@ -1,0 +1,7 @@
+<div class="layout_simple arc_<?= $this->archive->id ?> block<?= $this->class ?>">
+    <p>
+        <?= $this->linkHeadline ?>: 
+        <?php echo substr(strip_tags($this->teaser), 0, strpos(strip_tags($this->teaser), " ", 50)); ?>...</p>
+  <?php if ($this->date): ?><time datetime="<?= $this->datetime ?>"><?= $this->date ?></time> <?php endif; ?>
+
+</div>

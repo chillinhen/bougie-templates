@@ -55,8 +55,15 @@
             </div>
         </header>
 
-        <section class="page-content row" id="page-content">
+        <section class="page-content <?php echo ($this->right) ? "clearfix container" : ""; ?>" id="page-content">
+            <?php if ($this->right): ?><div class="main"><?php endif; ?>
            <?= $this->main ?>
+            <?php if ($this->right): ?></div><?php endif; ?>
+            <?php if ($this->right): ?>
+            <div class="sidebar">
+            <?php echo $this->right; ?> 
+            </div>
+            <?php endif; ?>
                 <?php if($this->sections['image-slider']): ?>
                     <?= $this->sections['image-slider'] ?>
                         <?php endif; ?>
