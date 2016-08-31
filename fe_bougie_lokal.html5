@@ -15,7 +15,6 @@
         <!--        		<link rel="stylesheet" href="files/layout/fonts/MyFontsWebfontsKit.css">-->
         <link rel="stylesheet" href="files/layout/css/jquery.fancybox.css">
 
-<?php echo $this->robots; ?>
 <?php echo $this->framework; ?>
 <?php echo $this->stylesheets; ?>
 <?php echo $this->mooScripts; ?>
@@ -34,35 +33,18 @@
     </head>
     <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
         <header class="page-header row" id="page-header">
-            <div id="top-head">
-                <div class="container">
-                     <div class="responsive-logo">
-                    <a href="<?= $this->base ?>"><img class="responsive-img" src="files/layout2016/icons/logo-small.png" alt="Bougie Immobilien GmbH"></a>
-                </div>
-                <?= $this->sections['top-head'] ?>
-                    <a class="nav-responsive">
-                        <span> </span>
-                        <span> </span>
-                        <span> </span>
-                    </a>
-                </div>
-            </div>
-            <div id="navigation" class="container">
-                <div class="nav-wrapper">
-                    <?= $this->sections['navigation'] ?>
-                    <span class="social">{{insert_module::25}}</span>
-                </div>
-                <div class="logo">
-                    <a href="<?= $this->base ?>"><?= $this->title ?></a>
-                </div>
-            </div>
+            <?php echo $this->header; ?> 
         </header>
 
-        <section class="page-content row" id="page-content">
+        <section class="page-content <?php echo ($this->right) ? "clearfix container" : ""; ?>" id="page-content">
+            <?php if ($this->right): ?><div class="main"><?php endif; ?>
            <?= $this->main ?>
-                <?php if($this->sections['image-slider']): ?>
-                    <?= $this->sections['image-slider'] ?>
-                        <?php endif; ?>
+            <?php if ($this->right): ?></div><?php endif; ?>
+            <?php if ($this->right): ?>
+            <div class="sidebar">
+            <?php echo $this->right; ?> 
+            </div>
+            <?php endif; ?>
         </section>
         <footer class="page-footer row" id="page-footer">
             <div class="footer-data">
