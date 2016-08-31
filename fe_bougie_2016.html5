@@ -64,9 +64,6 @@
             <?php echo $this->right; ?> 
             </div>
             <?php endif; ?>
-                <?php if($this->sections['image-slider']): ?>
-                    <?= $this->sections['image-slider'] ?>
-                        <?php endif; ?>
         </section>
         <footer class="page-footer row" id="page-footer">
             <div class="footer-data">
