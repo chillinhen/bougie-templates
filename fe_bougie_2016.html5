@@ -33,9 +33,8 @@
         <header class="page-header row" id="page-header">
             <?php echo $this->header; ?> 
         </header>
-
+        <?= $this->sections['page-head'] ?>
         <section class="page-content <?php echo ($this->right) ? "clearfix container" : ""; ?>" id="page-content">
-            <?= $this->sections['page-head'] ?>
             <?php if ($this->right): ?><div class="main"><?php endif; ?>
             <?= $this->main ?>
             <?php if ($this->right): ?></div><?php endif; ?>
